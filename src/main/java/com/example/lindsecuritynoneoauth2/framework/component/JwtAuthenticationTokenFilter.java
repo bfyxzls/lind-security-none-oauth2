@@ -20,7 +20,7 @@ import java.io.IOException;
 
 /**
  * JWT登录授权过滤器
- * Created by macro on 2018/4/26.
+ * 白名单以外的接口，会走这个过滤器，通过bearer的token来进行认证.
  */
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);
