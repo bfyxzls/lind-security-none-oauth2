@@ -1,5 +1,6 @@
 package com.example.lindsecuritynoneoauth2.service;
 
+import com.example.lindsecuritynoneoauth2.domain.CommonResource;
 import com.example.lindsecuritynoneoauth2.domain.CommonUserDetails;
 import com.example.lindsecuritynoneoauth2.framework.exception.SecurityException;
 import com.example.lindsecuritynoneoauth2.framework.util.JwtTokenUtil;
@@ -10,6 +11,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author lind
@@ -43,7 +47,9 @@ public class UserService {
     public UserDetails loadUserByUsername(String username) {
         // 正常账号
         if (username.equals("admin")) {
-            return CommonUserDetails.builder().username(username).status(1).build();
+            List<CommonResource> list = new ArrayList<>();
+            list.add(CommonResource.builder().url("/hello").id(1L).name("hello").build());
+            return CommonUserDetails.builder().username(username).status(1).resourceList(list).build();
         }
         // 禁用账号
         if (username.equals("lind")) {

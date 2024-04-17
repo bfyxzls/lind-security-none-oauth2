@@ -23,6 +23,7 @@ public class DynamicSecurityMetadataSource implements FilterInvocationSecurityMe
 
     @PostConstruct
     public void loadDataSource() {
+        // key是url,value是id:name
         configAttributeMap = dynamicSecurityService.loadDataSource();
     }
 

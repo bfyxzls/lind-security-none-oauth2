@@ -3,6 +3,7 @@ package com.example.lindsecuritynoneoauth2.service;
 import com.example.lindsecuritynoneoauth2.domain.CommonResource;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,6 +14,9 @@ import java.util.List;
 @Service
 public class ResourceService {
     public List<CommonResource> listAll() {
-        return null;
+
+        List<CommonResource> list=new ArrayList<>();
+        list.add(CommonResource.builder().url("/hello").id(1L).name("hello").build());
+        return list;
     }
 }
