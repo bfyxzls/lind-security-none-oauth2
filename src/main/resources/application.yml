@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: lind-security-none-oauth2
+
+jwt:
+  tokenHeader: Authorization #JWT??????
+  secret: lind-secret #JWT????????
+  expiration: 604800 #JWT??????(60*60*24*7)
+  tokenHead: 'Bearer '  #JWT???????
+
+server:
+  port: 6060
+
+secure:
+  ignored:
+    urls: #???????
+      - /login
+      - /swagger-ui/
+      - /swagger-resources/**
+      - /**/v2/api-docs
+      - /**/*.html
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.map
+      - /favicon.ico
+      - /actuator/**
+      - /druid/**
