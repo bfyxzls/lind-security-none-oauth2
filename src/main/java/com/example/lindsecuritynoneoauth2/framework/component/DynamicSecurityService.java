@@ -6,11 +6,12 @@ import java.util.Map;
 
 /**
  * 动态权限相关业务接口
- * Created by macro on 2020/2/7.
+ * 由使用者进行实现，使用者可从缓存或者数据库中读取资源列表.
  */
 public interface DynamicSecurityService {
     /**
      * 加载资源ANT通配符和资源对应MAP
+     * key是url,value是id:name
      */
     Map<String, ConfigAttribute> loadDataSource();
 }

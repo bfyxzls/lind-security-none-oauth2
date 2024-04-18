@@ -31,9 +31,9 @@ public class JwtTokenUtil {
     private static final String CLAIM_KEY_CREATED = "created";
     @Value("${jwt.secret}")
     private String secret;
-    @Value("${jwt.expiration}")
+    @Value("${jwt.expiration:60}")
     private Long expiration;
-    @Value("${jwt.tokenHead}")
+    @Value("${jwt.tokenHead:bearer}")
     private String tokenHead;
 
     /**
